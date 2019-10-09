@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>
+Signup Form</title>
+<script>
+	function validation() {
+	var name = document.signup.name.value;
+	var nam = /^[A-Za-z]$/;
+	var mobile = document.signup.mobile.value;
+	var mob = /^[1-9]{1}[0-9]}{9}$/;
+	var address = document.signup.address.value;
+	var email = document.signup.email.value;
+	var atpos = email.indexOf("@");
+	var dotpos = email.lastIndexOf(".");
+
+
+	if (name == "" || name == null) {
+		document.getElementById("name_error").innerHTML = "Name can't be blank";
+		return false;
+	} else if (mobile == "" || mobile == null) {
+		document.getElementById("mobile_error").innerHTML = "Phone number can't be blank";
+		return false;
+	} else if (mobile.length > 10 || mobile.length < 10) {
+		document.getElementById("mobile_error").innerHTML = "Mobile number should be of 10 digits";
+		return false;
+	} else if (mob.test(mobile.value) == false) {
+		document.getElementById("mobile_error").innerHTML = "Mobile number should starts with 9 and should be of 10 digit number";
+		return false;
+	} else if (email == "" || email == null) {
+		document.getElementById("email_error").innerHTML = "Email number can't be blank";
+		return false;
+	} else if (atpos < 2 || dotpos < atpos + 2 || dotpos + 2 >= address.length) {
+		document.getElementById("email_error").innerHTML = "Invalid email";
+		return false;
+
+	} else if (address == "" || address == null) {
+		document.getElementById("address_error").innerHTML = "Address number can't be blank";
+		return false;
+	}
+}
+</script>
+</head>
+
+<body>
+<table align="center" border="1">
+   <form name="signup" method="post" onsubmit="return validation()">
+      <tr>
+         <td>Name</td>
+         <td><input type="text" id="name" name="name">
+            <span id="name_error"></span>
+         </td>
+      </tr>
+      <tr>
+         <td>Mobile Number</td>
+         <td><input type="text" id="mobile" name="mobile">
+            <span id="mobile_error"></span>
+         </td>
+      </tr>
+      <tr>
+         <td>Address</td>
+         <td><input type="text" id="address" name="address">
+            <span id="address_error"></span>
+         </td>
+      </tr>
+      <tr>
+         <td>Email</td>
+         <td><input type="text" id="email" name="email">
+            <span id="email_error"></span>
+         </td>
+      </tr>
+      <tr>
+         <td><input type="submit" value="Submit" ></td>
+      </tr>
+   </form>
+</table>
+</body>
+</html>
+
+
+
+
+
