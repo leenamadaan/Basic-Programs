@@ -13,15 +13,26 @@ Signup Form</title>
 	var email = document.signup.email.value;
 	var atpos = email.indexOf("@");
 	var dotpos = email.lastIndexOf(".");
+	var status=false;
 
 
-	if (name == "" || name == null) {
+	/*if (name == "" || name == null) {
 		document.getElementById("name_error").innerHTML = "Name can't be blank";
 		return false;
-	} else if (mobile == "" || mobile == null) {
+	} 
+	else {
+		return true;
+		}*/
+		
+	if (mobile == "" || mobile == null) {
 		document.getElementById("mobile_error").innerHTML = "Phone number can't be blank";
 		return false;
-	} else if (mobile.length > 10 || mobile.length < 10) {
+	} 
+	else {
+		return true;
+		}
+	
+	/*else if (mobile.length > 10 || mobile.length < 10) {
 		document.getElementById("mobile_error").innerHTML = "Mobile number should be of 10 digits";
 		return false;
 	} else if (mob.test(mobile.value) == false) {
@@ -38,13 +49,14 @@ Signup Form</title>
 		document.getElementById("address_error").innerHTML = "Address number can't be blank";
 		return false;
 	}
+	return status;
 }
 </script>
 </head>
 
 <body>
 <table align="center" border="1">
-   <form name="signup" method="post" onsubmit="return validation()">
+   <form name="signup" method="post" action=# onsubmit="return validation()">
       <tr>
          <td>Name</td>
          <td><input type="text" id="name" name="name">

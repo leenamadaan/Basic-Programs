@@ -1,0 +1,30 @@
+<html>
+<head>
+<title id="t1">11October2019</title>
+<script>
+	function validate()
+	{
+	var n=document.getElementById("title").value;
+		
+	document.getElementById('t1').innerHTML=n;
+	
+}
+
+
+</script>
+<body>
+
+	<table>
+		<tr>
+			<td>Title</td>
+			<td><input type="text" id="title" name="title"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="change" onclick="return validate()"></td>
+		</tr>
+	</table>	
+
+</body>
+</html>
+
+
