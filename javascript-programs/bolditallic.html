@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Wednesday
+</title>
+<script>
+	function validate()
+	{
+		var d=document.getElementById("t").value;
+		document.getElementById("content").value=d;
+		
+		if(d==""){
+			return none;
+			}
+		
+		else{
+			if(document.getElementById("bold").checked)
+			{
+				document.getElementById("content").value=d;
+				document.getElementById("content").style.fontWeight="bold"
+			}
+			
+			else if(document.getElementById("italic").checked)
+			{
+				document.getElementById("content").style.fontStyle = "italic"
+				}
+		
+		
+			
+		}
+	
+</script>
+</head>
+
+
+ 
+<body>
+	<table>
+		<tr><td><textarea id="t"></textarea></td></tr>
+		<tr><td><input type="checkbox" name="bold" id="bold"></td><td>Bold</td></tr>
+		<tr><td><input type="checkbox" name="italic" id="italic"></td><td>Itallic</td></tr>
+		<tr><td><input type="button" value="change" onclick="return validate()"></td></tr>
+		<tr><td><textarea id="content">Preview...</textarea></td></tr>
+	</table>
+</body>
+
+

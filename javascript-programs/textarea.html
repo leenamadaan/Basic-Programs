@@ -1,21 +1,21 @@
 <html>
 <head>
-<title id="t">Friday
+<title id="t">Wednesday
 </title>
 <script>
 	function validate()
 	{
 		var d=document.getElementById("t").innerText;
-		document.getElementById("content").value=d;
+		document.getElementById("content").innerHTML=d;
 		}
 	
 </script>
 </head>
-<body>
+<body>	
 <table>
 
 <tr><td><input type="button" value="change" id="mybtn" onclick="return validate()"></td></tr>
-<tr><td><input type="text" id="content"></td></tr>
+<tr><td><textarea id="content"></textarea></td></tr>
 </table>
 
 	
